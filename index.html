@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraser Analytical Services | Feed Analysis Experts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
+    <style>
+        /* Alert Banner Styles - Fixed positioning to be below navbar */
+        .alert-banner {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8c6d1f;
+            padding: 0.75rem 0;
+            position: fixed;
+            top: 80px; /* Position below navbar */
+            left: 0;
+            right: 0;
+            z-index: 45;
+            border-bottom: 2px solid #eab308;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .alert-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .alert-icon {
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            color: #d97706;
+        }
+
+        .alert-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .alert-text strong {
+            color: #b45309;
+        }
+
+        .alert-close {
+            flex-shrink: 0;
+            background: none;
+            border: none;
+            color: #d97706;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .alert-close:hover {
+            background-color: rgba(217, 119, 6, 0.1);
+            color: #b45309;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .alert-banner {
+                top: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .alert-banner {
+                top: 70px;
+                padding: 0.6rem 0;
+            }
+
+            .alert-content {
+                flex-direction: row;
+                text-align: left;
+                gap: 0.75rem;
+            }
+
+            .alert-text {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+
+            .alert-icon {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .alert-banner {
+                top: 65px;
+                padding: 0.5rem 0;
+            }
+
+            .alert-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .alert-text {
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+
+            .alert-close {
+                align-self: flex-end;
+                margin-top: -0.5rem;
+                margin-right: -0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .alert-banner {
+                top: 60px;
+            }
+
+            .alert-text {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Adjust hero section to account for alert banner */
+        .hero {
+            padding-top: 140px; /* Increased to account for navbar + alert */
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                padding-top: 130px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 120px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 110px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 100px;
+            }
+        }
+
+        /* Ensure navbar has proper z-index */
+        .main-nav {
+            z-index: 50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-inner">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./assets/fraser-analytical-logo.png" alt="Fraser Analytical Services" class="logo-image">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="./index.html" class="nav-link ">Home</a>
+                    <a href="./index.html#services" class="nav-link">Services</a>
+                    <a href="./pricing.html" class="nav-link">Pricing</a>
+                    <a href="./announcements.html" class="nav-link">Announcements</a>
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="btn btn-primary">Request Analysis</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn">
+                    <button id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <a href="./index.html" class="mobile-menu-link active">Home</a>
+                <a href="./index.html#services" class="mobile-menu-link">Services</a>
+                <a href="./pricing.html" class="mobile-menu-link">Pricing</a>
+                <a href="./announcements.html" class="mobile-menu-link">Announcements</a>
+                <a href="./index.html#contact" class="mobile-menu-link">Contact</a>
+                <a href="#" class="btn btn-primary w-full mt-2">Request Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alert Banner -->
+    <div class="alert-banner" id="alertBanner">
+        <div class="alert-content">
+            <div class="alert-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="alert-text">
+                <strong>Important Announcement:</strong> Effective November 1, 2025, Fraser Analytical Services will be taking over invoicing responsibilities from our parent lab, Cumberland Valley Analytical Services. This transition is part of our commitment to enhance service efficiency and streamline communication. Please ensure all invoices up to and including October 31, 2025 owed to Cumberland Valley are paid directly to CVAS and all invoices after November 1st 2025 are paid to Fraser Analytical.
+            </div>
+            <button class="alert-close" id="alertClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-text animate-fade-in">
+                    <h1 class="hero-title">Precision Feed Analysis for Optimal Nutrition</h1>
+                    <p class="hero-subtitle">Accurate, reliable, and timely feed analysis services to maximize livestock health and productivity.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-accent animate-slide-up animate-delay-200">Contact Us</a>
+                        <a href="#services" class="btn btn-white animate-slide-up animate-delay-300">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-visual animate-fade-in animate-delay-200">
+                    <div class="report-container">
+                        <div class="report-bg"></div>
+                        <div class="report-card">
+                            <div class="report-inner">
+                                <i class="fas fa-leaf report-icon animate-pulse-slow"></i>
+                                <h3 class="report-title">Sample Analysis Report</h3>
+                                <div class="report-placeholder">
+                                    <div class="placeholder-content">
+                                        <i class="fas fa-chart-line placeholder-icon"></i>
+                                        <p class="placeholder-text">Nutritional Composition</p>
+                                    </div>
+                                </div>
+                                <div class="report-stats">
+                                    <span>Protein: 18.2%</span>
+                                    <span>Fiber: 12.5%</span>
+                                    <span>Moisture: 9.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">Our Feed Analysis Services</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Comprehensive testing solutions for livestock nutrition and feed quality</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card animate-slide-up animate-delay-100">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3 class="service-title">Nutritional Analysis</h3>
+                    <p>Comprehensive analysis of protein, fiber, fat, minerals and vitamins in animal feed.</p>
+                    <ul class="features-list">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Crude protein analysis</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Fiber content measurement</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Mineral and vitamin profiling</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card animate-slide-up animate-delay-200">
+                    <div class="service-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="service-title">Water Testing</h3>
+                    <p>Water quality must be monitored to ensure safety and compliance.</p>
+                    <ul class="features-list">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Monitors cow health & compliance</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Meets federal and provincial testing standards</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Water quality analysis for purity</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card animate-slide-up animate-delay-300">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="service-title">Forage Analysis</h3>
+                    <p>Detailed assessment of forage nutritional value and digestibility.</p>
+                    <ul class="features-list">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>24-hour results for forage samples</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>NIR technology for precise analysis</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Accurate nutrition data for better feed decisions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image animate-fade-in">
+                    <div class="relative">
+                        <div class="about-img-placeholder">
+                            <img src="./assets/about us.jpg" alt="Fraser Analytical Services Team">
+                        </div>
+                        <div class="about-badge animate-slide-up animate-delay-300">
+                            <h4>NFTA Certified</h4>
+                            <p>Highest standards in feed analysis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-fade-in animate-delay-100">
+                    <h2 class="about-title">About Fraser Analytical Services</h2>
+                    <p class="about-text">Fraser Analytical Services (FAS), located in British Columbia's Fraser Valley, provides rapid forage and feed analysis using Near Infrared Spectroscopy (NIR). As a satellite facility of Cumberland Valley Analytical Services (CVAS) and NFTA-certified, we deliver advanced nutrient evaluations with fast turnaround, lower costs, and minimal paperwork—offering Canadian clients testing capabilities usually only available in the U.S.</p>
+                    <p class="about-text">Our state-of-the-art facility is equipped with advanced instrumentation and staffed by highly qualified scientists dedicated to delivering precise results that help our clients make informed decisions about animal nutrition and feed formulation.</p>
+                    
+                    <div class="features-grid mb-8">
+                        <div class="feature-item">
+                            <div class="feature-icon-container">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>NFTA Certified</h4>
+                                <p>Accredited Quality</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-container">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fast Turnaround</h4>
+                                <p>Results in 24-48 Hours</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-container">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Advanced Equipment</h4>
+                                <p>Cutting-Edge Technology</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-container">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Expert Team</h4>
+                                <p>Experienced Technicians</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">Our Analysis Process</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Simple, efficient, and reliable feed testing workflow</p>
+            </div>
+            
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-step animate-slide-up animate-delay-100">
+                    <div class="step-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="step-title">1. Sample Submission</h3>
+                    <p>Ship your feed samples to our lab using our prepaid shipping kits</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step animate-slide-up animate-delay-200">
+                    <div class="step-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="step-title">2. Analysis</h3>
+                    <p>Our experts perform comprehensive testing using advanced equipment</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step animate-slide-up animate-delay-300">
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="step-title">3. Report Generation</h3>
+                    <p>Detailed report with nutritional values and recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">Client Testimonials</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">What our clients say about our feed analysis services</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-slide-up animate-delay-100">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fraser Analytical Services has transformed how we formulate feed for our dairy herd. Their accurate protein and fiber analysis has helped us optimize milk production while reducing costs."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4 class="author-name">Robert Johnson</h4>
+                            <p class="author-position">Dairy Farm Manager, GreenPastures</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-slide-up animate-delay-200">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Their mycotoxin screening saved us from a major contamination issue. The fast turnaround and detailed report helped us make critical decisions before the feed reached our poultry."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4 class="author-name">Sarah Williams</h4>
+                            <p class="author-position">Operations Director, PoultryPlus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-slide-up animate-delay-300">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"As a feed manufacturer, we rely on Fraser's precise additive verification to ensure our products meet label claims. Their technical expertise is invaluable to our quality control process."</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4 class="author-name">Michael Chen</h4>
+                            <p class="author-position">Quality Assurance, NutriFeed Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <div class="cta-card">
+                <h2 class="cta-title animate-fade-in">Ready to Optimize Your Feed Quality?</h2>
+                <p>Get accurate nutritional analysis and expert recommendations for your livestock feed</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-white animate-slide-up">Request Analysis</a>
+                    <a href="#contact" class="btn btn-white-outline animate-slide-up animate-delay-100">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">Contact Us</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Get in touch with our feed analysis experts</p>
+            </div>
+            
+            <div class="contact-card animate-fade-in">
+                <!-- Contact Info -->
+                <div class="contact-info-centered">
+                    <h3 class="contact-title">Get in Touch</h3>
+                    
+                    <div class="contact-details-centered">
+                        <div class="contact-item-centered">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Fraser Analytical Services</h4>
+                                <p>1356 Sumas Way<br>Abbotsford, BC V2S 8H2</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-centered">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-phone contact-icon"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Phone Number</h4>
+                                <a href="tel:+16045571486" class="contact-link">604-557-1486</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-centered">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-envelope contact-icon"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Email Address</h4>
+                                <a href="mailto:info@fraseranalytical.com" class="contact-link">info@fraseranalytical.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-centered">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-clock contact-icon"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="contact-label">Business Hours</h4>
+                                <p>Monday-Friday: 9am - 5pm (PST)<br>After Hours drop box available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./assets/logo.png" alt="Fraser Analytical Services" class="footer-logo-image">
+                    </div>
+                    <p class="footer-desc">Precision feed analysis services for livestock nutrition and agricultural excellence.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="./index.html" class="footer-link">Home</a>
+                        <a href="#services" class="footer-link">Services</a>
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#testimonials" class="footer-link">Testimonials</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Our Services</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Nutritional Analysis</a>
+                        <a href="#" class="footer-link">Water Testing</a>
+                        <a href="#" class="footer-link">Forage Quality</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="footer-links">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                            <span class="footer-contact-text">1356 Sumas Way<br>Abbotsford, BC V2S 8H2</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+16045571486" class="footer-contact-text">604-557-1486</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope footer-contact-icon"></i>
+                            <a href="mailto:info@fraseranalytical.com" class="footer-contact-text">info@fraseranalytical.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock footer-contact-icon"></i>
+                            <span class="footer-contact-text">Mon-Fri: 9am-5pm (PST)<br>After Hours drop box</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fraser Analytical Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Alert banner close functionality
+        document.getElementById('alertClose').addEventListener('click', function() {
+            const alertBanner = document.getElementById('alertBanner');
+            alertBanner.style.display = 'none';
+            
+            // Adjust hero section padding when alert is closed
+            document.querySelector('.hero').style.paddingTop = '8rem';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Fraser Analytical Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+</head>
+<body>
+     <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-inner">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./assets/fraser-analytical-logo.png" alt="Fraser Analytical Services" class="logo-image">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="./index.html" class="nav-link active">Home</a>
+                    <a href="./index.html#services" class="nav-link">Services</a>
+                    <a href="./pricing.html" class="nav-link">Pricing</a>
+                    <a href="./announcements.html" class="nav-link">Announcements</a>
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="btn btn-primary">Request Analysis</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn">
+                    <button id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <a href="./index.html" class="mobile-menu-link">Home</a>
+                <a href="./index.html#services" class="mobile-menu-link">Services</a>
+                <a href="./pricing.html" class="mobile-menu-link ">Pricing</a>
+                <a href="./announcements.html" class="mobile-menu-link">Announcements</a>
+                <a href="./index.html#contact" class="mobile-menu-link">Contact</a>
+                <a href="#" class="btn btn-primary w-full mt-2">Request Analysis</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="pricing-hero-content animate-fade-in">
+                <h1 class="pricing-hero-title">Transparent Pricing for Quality Analysis</h1>
+                <p class="pricing-hero-subtitle">Competitive rates for comprehensive feed analysis services with fast turnaround times</p>
+                <div class="currency-toggle">
+                    <button class="currency-btn active" data-currency="cad">CAD</button>
+                    <button class="currency-btn" data-currency="usd">USD</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NIR Packages Section -->
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">NIR Analysis Packages</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Near Infrared Spectroscopy for fast, accurate results</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- NIR1 Package -->
+                <div class="pricing-card featured animate-slide-up animate-delay-100">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR1 Package</h3>
+                        <div class="price cad-price">$32.78</div>
+                        <div class="price usd-price hidden">$23.75</div>
+                        <div class="pricing-code">Code: A1</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>Comprehensive NIR analysis including:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Dry Matter & Moisture</li>
+                            <li><i class="fas fa-check"></i> Crude Protein & Soluble Protein</li>
+                            <li><i class="fas fa-check"></i> ADF, NDF & Lignin</li>
+                            <li><i class="fas fa-check"></i> Starch, ESC & WSC</li>
+                            <li><i class="fas fa-check"></i> Fat & Ash</li>
+                            <li><i class="fas fa-check"></i> Calcium, Phosphorus, Magnesium, Potassium</li>
+                            <li><i class="fas fa-check"></i> pH on ensiled forage</li>
+                            <li><i class="fas fa-check"></i> Calculated RFV, Available Protein, Energy Values</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NIR2 Package -->
+                <div class="pricing-card animate-slide-up animate-delay-200">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR2 Package</h3>
+                        <div class="price cad-price">$52.44</div>
+                        <div class="price usd-price hidden">$38.00</div>
+                        <div class="pricing-code">Code: A2</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>NIR1 Analysis plus wet-chemistry Minerals:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> All NIR1 features</li>
+                            <li><i class="fas fa-check"></i> Sodium (Na)</li>
+                            <li><i class="fas fa-check"></i> Iron (Fe)</li>
+                            <li><i class="fas fa-check"></i> Manganese (Mn)</li>
+                            <li><i class="fas fa-check"></i> Zinc (Zn)</li>
+                            <li><i class="fas fa-check"></i> Copper (Cu)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NIR3 Package -->
+                <div class="pricing-card animate-slide-up animate-delay-300">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR3 Package</h3>
+                        <div class="price cad-price">$66.93</div>
+                        <div class="price usd-price hidden">$48.50</div>
+                        <div class="pricing-code">Code: A3</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>NIR2 Analysis plus additional wet-chemistry:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> All NIR2 features</li>
+                            <li><i class="fas fa-check"></i> Chloride (Cl)</li>
+                            <li><i class="fas fa-check"></i> Sulfur (S)</li>
+                            <li><i class="fas fa-check"></i> DCAD calculation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NIR4 Package -->
+                <div class="pricing-card animate-slide-up animate-delay-100">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR4 Package</h3>
+                        <div class="price cad-price">$75.90</div>
+                        <div class="price usd-price hidden">$55.00</div>
+                        <div class="pricing-code">Code: A4</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>NIR2 Analysis plus wet-chemistry on key parameters:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> All NIR2 features</li>
+                            <li><i class="fas fa-check"></i> Crude Protein (wet-chemistry)</li>
+                            <li><i class="fas fa-check"></i> ADF (wet-chemistry)</li>
+                            <li><i class="fas fa-check"></i> NDF (wet-chemistry)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NIR5 Package -->
+                <div class="pricing-card animate-slide-up animate-delay-200">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR5 Package</h3>
+                        <div class="price cad-price">$56.24</div>
+                        <div class="price usd-price hidden">$40.75</div>
+                        <div class="pricing-code">Code: A5</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>NIR1 Analysis plus wet-chemistry on key parameters:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> All NIR1 features</li>
+                            <li><i class="fas fa-check"></i> Crude Protein (wet-chemistry)</li>
+                            <li><i class="fas fa-check"></i> ADF (wet-chemistry)</li>
+                            <li><i class="fas fa-check"></i> NDF (wet-chemistry)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NIR Plus Option -->
+                <div class="pricing-card addon animate-slide-up animate-delay-300">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">NIR Plus Option</h3>
+                        <div class="price cad-price">$16.56</div>
+                        <div class="price usd-price hidden">$12.00</div>
+                        <div class="pricing-code">Code: P</div>
+                    </div>
+                    <div class="pricing-features">
+                        <p>Enhanced analysis add-on for NIR1-NIR5 packages:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 30 hr NDF Digestibility with Kd Rate</li>
+                            <li><i class="fas fa-check"></i> NDF Digestibility 120 and 240</li>
+                            <li><i class="fas fa-check"></i> uNDF120, uNDF240</li>
+                            <li><i class="fas fa-check"></i> Fermentation acids evaluation</li>
+                            <li><i class="fas fa-check"></i> Indigestible Fiber & Total Fatty Acids</li>
+                            <li><i class="fas fa-check"></i> Soluble Fiber</li>
+                            <li><i class="fas fa-check"></i> Soil contamination probability index</li>
+                            <li><i class="fas fa-check"></i> Corn silage specific analyses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="section forms-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">Download Forms</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Complete pricing lists and submission forms</p>
+            </div>
+
+            <div class="forms-grid">
+                <div class="form-card animate-slide-up animate-delay-100">
+                    <div class="form-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Complete CAD Price List</h3>
+                    <p>Detailed pricing for all services in Canadian Dollars</p>
+                    <a href="./assets/CAD Price List September 2025 (1).pdf" target="_blank" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+
+                <div class="form-card animate-slide-up animate-delay-200">
+                    <div class="form-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Complete USD Price List</h3>
+                    <p>Detailed pricing for all services in US Dollars</p>
+                    <a href="./assets/USD Price List September 2025.pdf" target="_blank" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+
+                <div class="form-card animate-slide-up animate-delay-300">
+                    <div class="form-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Automatic Credit Card Fillable form </h3>
+                    <p>Required form for processing automatic payments</p>
+                    <a href="./assets/Fraser Analytical Automatic Credit Card Fillable Form.pdf" class="btn btn-accent">
+                        <i class="fas fa-download"></i> Download Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <div class="cta-card">
+                <h2 class="cta-title animate-fade-in">Ready to Get Started?</h2>
+                <p>Contact us for custom quotes or to discuss your specific analysis needs</p>
+                <div class="cta-buttons">
+                    <a href="./index.html#contact" class="btn btn-white animate-slide-up">Contact Us</a>
+                    <a href="#" class="btn btn-white-outline animate-slide-up animate-delay-100">Request Analysis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <span class="footer-logo-text">FRASER ANALYTICAL SERVICES</span>
+                    </div>
+                    <p class="footer-desc">Precision feed analysis services for livestock nutrition and agricultural excellence.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="./index.html" class="footer-link">Home</a>
+                        <a href="./index.html#services" class="footer-link">Services</a>
+                        <a href="./index.html#about" class="footer-link">About Us</a>
+                        <a href="./pricing.html" class="footer-link">Pricing</a>
+                        <a href="./index.html#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Our Services</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Nutritional Analysis</a>
+                        <a href="#" class="footer-link">Water Testing</a>
+                        <a href="#" class="footer-link">Forage Quality</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="footer-links">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                            <span class="footer-contact-text">1356 Sumas Way<br>Abbotsford, BC V2S 8H2</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+16045571486" class="footer-contact-text">604-557-1486</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope footer-contact-icon"></i>
+                            <a href="mailto:info@fraseranalytical.com" class="footer-contact-text">info@fraseranalytical.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock footer-contact-icon"></i>
+                            <span class="footer-contact-text">Mon-Fri: 9am-5pm (PST)<br>After Hours drop box</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fraser Analytical Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Currency toggle functionality
+        document.querySelectorAll('.currency-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const currency = this.getAttribute('data-currency');
+                
+                // Update active state
+                document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show/hide prices
+                if (currency === 'cad') {
+                    document.querySelectorAll('.cad-price').forEach(price => price.classList.remove('hidden'));
+                    document.querySelectorAll('.usd-price').forEach(price => price.classList.add('hidden'));
+                } else {
+                    document.querySelectorAll('.cad-price').forEach(price => price.classList.add('hidden'));
+                    document.querySelectorAll('.usd-price').forEach(price => price.classList.remove('hidden'));
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

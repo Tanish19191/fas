@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Submission | Fraser Analytical Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <style>
+        /* Additional Styles for Sample Submission Page */
+        .submission-hero {
+            background: linear-gradient(rgba(26, 93, 26, 0.85), rgba(26, 93, 26, 0.9)), 
+                         url('https://images.unsplash.com/photo-1589923188651-268a35c0d0bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 10rem 0 5rem;
+            text-align: center;
+        }
+
+        .submission-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submission-hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .submission-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+        }
+
+        .submission-section {
+            background-color: var(--light);
+        }
+
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .instruction-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .instruction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .instruction-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.75rem;
+        }
+
+        .instruction-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .instruction-content {
+            color: var(--gray-700);
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .form-download-section {
+            background-color: var(--white);
+        }
+
+        .form-download-card {
+            background: var(--light);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 5px solid var(--accent);
+        }
+
+        .form-download-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+
+        .form-download-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .form-download-text {
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .form-preview {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-300);
+        }
+
+        .form-preview-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-preview-content {
+            color: var(--gray-700);
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .form-preview-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--gray-300);
+        }
+
+        .form-preview-section:last-child {
+            border-bottom: none;
+        }
+
+        .form-preview-section-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .form-preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .form-preview-table th,
+        .form-preview-table td {
+            border: 1px solid var(--gray-400);
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .form-preview-table th {
+            background-color: var(--gray-200);
+            font-weight: 600;
+        }
+
+        .form-preview-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .form-preview-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .form-preview-list li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .shipping-info {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-300);
+        }
+
+        .shipping-info-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .shipping-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .shipping-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .shipping-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--gray-100);
+            border-radius: var(--radius-md);
+        }
+
+        .shipping-icon {
+            color: var(--accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .shipping-text h4 {
+            font-size: 1.125rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .shipping-text p {
+            color: var(--gray-700);
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .submission-hero {
+                padding: 8rem 0 3rem;
+            }
+            
+            .submission-hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .submission-hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .form-download-card {
+                padding: 2rem;
+            }
+            
+            .form-download-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .form-download-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-inner">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./assets/fraser-analytical-logo.png" alt="Fraser Analytical Services" class="logo-image">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <a href="./index.html#services" class="nav-link">Services</a>
+                    <a href="./pricing.html" class="nav-link">Pricing</a>
+                    <a href="./announcements.html" class="nav-link">Announcements</a>
+                    <a href="./sample-submission.html" class="nav-link active">Sample Submission</a>
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="btn btn-primary">Request Analysis</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn">
+                    <button id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <a href="./index.html" class="mobile-menu-link">Home</a>
+                <a href="./index.html#services" class="mobile-menu-link">Services</a>
+                <a href="./pricing.html" class="mobile-menu-link">Pricing</a>
+                <a href="./announcements.html" class="mobile-menu-link">Announcements</a>
+                <a href="./sample-submission.html" class="mobile-menu-link active">Sample Submission</a>
+                <a href="./index.html#contact" class="mobile-menu-link">Contact</a>
+                <a href="#" class="btn btn-primary w-full mt-2">Request Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sample Submission Hero Section -->
+    <section class="submission-hero">
+        <div class="container">
+            <div class="submission-hero-content animate-fade-in">
+                <h1 class="submission-hero-title">Sample Submission Guide</h1>
+                <p class="submission-hero-subtitle">Follow our guidelines to ensure accurate and timely analysis of your agricultural samples</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="section submission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-fade-in">How to Submit Samples</h2>
+                <p class="section-subtitle animate-fade-in animate-delay-100">Simple steps for proper sample collection and submission</p>
+            </div>
+
+            <div class="instructions-grid">
+                <!-- Instruction 1 -->
+                <div class="instruction-card animate-slide-up animate-delay-100">
+                    <div class="instruction-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="instruction-title">1. Prepare Your Samples</h3>
+                    <div class="instruction-content">
+                        <p>Ensure samples are properly collected, dried, and stored in clean, appropriate containers. For forages, collect representative samples from multiple locations in the field or storage.</p>
+                        <ul>
+                            <li>Use clean, dry containers to prevent contamination</li>
+                            <li>Label each sample clearly with permanent marker</li>
+                            <li>Submit at least 500g of material for accurate analysis</li>
+                            <li>Keep samples cool and dry until shipping</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Instruction 2 -->
+                <div class="instruction-card animate-slide-up animate-delay-200">
+                    <div class="instruction-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="instruction-title">2. Complete the Form</h3>
+                    <div class="instruction-content">
+                        <p>Download and fill out the Sample Submittal Form completely. Include all required information for accurate processing and billing.</p>
+                        <ul>
+                            <li>Provide complete billing information</li>
+                            <li>Include farm name and sample descriptions</li>
+                            <li>Select appropriate analysis packages</li>
+                            <li>Note any special instructions or requirements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Instruction 3 -->
+                <div class="instruction-card animate-slide-up animate-delay-300">
+                    <div class="instruction-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="instruction-title">3. Package & Ship</h3>
+                    <div class="instruction-content">
+                        <p>Place samples and completed form in a sturdy shipping box. Use sufficient packing material to prevent damage during transit.</p>
+                        <ul>
+                            <li>Use a sturdy box with adequate padding</li>
+                            <li>Include the completed submission form</li>
+                            <li>Seal the package securely</li>
+                            <li>Ship to our laboratory address</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Download Section -->
+    <section class="section form-download-section">
+        <div class="container">
+            <div class="form-download-card animate-fade-in">
+                <div class="form-download-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h2 class="form-download-title">Download Sample Submittal Form</h2>
+                <p class="form-download-text">Use our standard form to submit your feed and forage samples for analysis. Please fill out all required fields to ensure accurate processing and timely results.</p>
+                
+                <div class="form-preview">
+                    <h3 class="form-preview-title">Form Preview</h3>
+                    <div class="form-preview-content">
+                        <div class="form-preview-section">
+                            <div class="form-preview-section-title">Fraser Analytical Services</div>
+                            <div>1356 Sumas Way, Abbotsford BC V2S 8H2 | 604.557.1486 ext 902</div>
+                            <div>www.fraseranalytical.com | info@fraseranalytical.com</div>
+                        </div>
+                        
+                        <div class="form-preview-section">
+                            <div class="form-preview-section-title">Party to Bill & Report Copy Information</div>
+                            <table class="form-preview-table">
+                                <tr>
+                                    <th>Account #</th>
+                                    <th>Name</th>
+                                    <th>Street</th>
+                                    <th>City/Province</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="form-preview-section">
+                            <div class="form-preview-section-title">Sample Information</div>
+                            <table class="form-preview-table">
+                                <tr>
+                                    <th>Lab #</th>
+                                    <th>Farm Name</th>
+                                    <th>Description</th>
+                                    <th>Cut</th>
+                                    <th>Year</th>
+                                    <th>Date Sampled</th>
+                                    <th>Package</th>
+                                    <th>Option Codes</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <!-- Additional rows would be here -->
+                            </table>
+                        </div>
+                        
+                        <div class="form-preview-section">
+                            <div class="form-preview-section-title">Analysis Packages</div>
+                            <ul class="form-preview-list">
+                                <li>A1 - NIR1</li>
+                                <li>A2 - NIR2</li>
+                                <li>A3 - NIR3</li>
+                                <li>A4 - NIR4</li>
+                                <li>A5 - NIR5</li>
+                                <li>B1 - Gravitron</li>
+                                <li>B2 - CW Pint</li>
+                                <!-- Additional packages would be listed -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="./assets/Sample-Submittal-Form-2.pdf" class="btn btn-primary" download>
+                    <i class="fas fa-download"></i> Download PDF Form
+                </a>
+                
+                <div class="shipping-info">
+                    <h3 class="shipping-info-title">Shipping Information</h3>
+                    <div class="shipping-details">
+                        <div class="shipping-item">
+                            <div class="shipping-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="shipping-text">
+                                <h4>Shipping Address</h4>
+                                <p>Fraser Analytical Services<br>1356 Sumas Way<br>Abbotsford, BC V2S 8H2</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-item">
+                            <div class="shipping-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="shipping-text">
+                                <h4>Contact Information</h4>
+                                <p>Phone: 604-557-1486 ext 902<br>Email: info@fraseranalytical.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-item">
+                            <div class="shipping-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="shipping-text">
+                                <h4>Receiving Hours</h4>
+                                <p>Monday-Friday: 9am-5pm (PST)<br>After Hours: Drop box available</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-item">
+                            <div class="shipping-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="shipping-text">
+                                <h4>Shipping Tips</h4>
+                                <p>For time-sensitive samples, consider using expedited shipping services. Ensure samples are properly sealed to prevent leakage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <div class="cta-card">
+                <h2 class="cta-title animate-fade-in">Need Help With Sample Submission?</h2>
+                <p>Contact our team for guidance on proper sample collection, forms, or shipping</p>
+                <div class="cta-buttons">
+                    <a href="./index.html#contact" class="btn btn-white animate-slide-up">Contact Us</a>
+                    <a href="tel:+16045571486" class="btn btn-white-outline animate-slide-up animate-delay-100">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./assets/logo.png" alt="Fraser Analytical Services" class="footer-logo-image">
+                    </div>
+                    <p class="footer-desc">Precision feed analysis services for livestock nutrition and agricultural excellence.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="./index.html" class="footer-link">Home</a>
+                        <a href="./index.html#services" class="footer-link">Services</a>
+                        <a href="./pricing.html" class="footer-link">Pricing</a>
+                        <a href="./announcements.html" class="footer-link">Announcements</a>
+                        <a href="./sample-submission.html" class="footer-link">Sample Submission</a>
+                        <a href="./index.html#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Our Services</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Nutritional Analysis</a>
+                        <a href="#" class="footer-link">Water Testing</a>
+                        <a href="#" class="footer-link">Forage Quality</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="footer-links">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                            <span class="footer-contact-text">1356 Sumas Way<br>Abbotsford, BC V2S 8H2</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+16045571486" class="footer-contact-text">604-557-1486</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope footer-contact-icon"></i>
+                            <a href="mailto:info@fraseranalytical.com" class="footer-contact-text">info@fraseranalytical.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock footer-contact-icon"></i>
+                            <span class="footer-contact-text">Mon-Fri: 9am-5pm (PST)<br>After Hours drop box</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fraser Analytical Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
